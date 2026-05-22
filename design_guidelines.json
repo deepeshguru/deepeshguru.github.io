@@ -1,0 +1,154 @@
+{
+  "project_context": {
+    "domain": "Personal Portfolio - Senior AI Engineer / AI Architect",
+    "target_audience": ["AI/ML Hiring Managers", "CTOs", "Enterprise AI teams", "Recruiters"],
+    "emotional_tone": "Authority, Precision, Futuristic, Intelligence, Scale",
+    "theme": "dark",
+    "archetype": "Archetype 4 (Swiss & High-Contrast - Dark Adaptation)"
+  },
+  "design_system": {
+    "colors": {
+      "background": {
+        "primary": "#050505",
+        "secondary": "#0A0A0A",
+        "tertiary": "#121212"
+      },
+      "surface": {
+        "glass": "bg-white/5 backdrop-blur-xl border border-white/10",
+        "card": "bg-[#0A0A0A] border border-white/5",
+        "card_hover": "hover:bg-[#121212] hover:border-white/10"
+      },
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#A1A1AA",
+        "muted": "#71717A",
+        "accent": "#E0E0E0"
+      },
+      "accent": {
+        "primary": "#0EA5E9",
+        "primary_hover": "#38BDF8",
+        "subtle": "rgba(14, 165, 233, 0.15)"
+      },
+      "borders": {
+        "default": "#1F1F22",
+        "subtle": "rgba(255, 255, 255, 0.05)",
+        "active": "rgba(255, 255, 255, 0.2)"
+      }
+    },
+    "typography": {
+      "families": {
+        "headings": "Cabinet Grotesk, sans-serif",
+        "body": "Manrope, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "rules": {
+        "h1": "text-5xl md:text-6xl tracking-tighter font-medium text-white",
+        "h2": "text-3xl md:text-4xl tracking-tight font-medium text-white",
+        "h3": "text-xl md:text-2xl tracking-tight font-medium text-white",
+        "body": "text-base md:text-lg leading-relaxed text-zinc-400",
+        "overline": "text-xs uppercase tracking-[0.2em] font-mono text-sky-400"
+      }
+    },
+    "spacing_and_layout": {
+      "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      "section_padding": "py-24 md:py-32",
+      "grid_patterns": {
+        "bento": "grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6",
+        "cards": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      }
+    },
+    "surfaces_and_effects": {
+      "cards": "rounded-none or minimal rounded-lg. Use 1px solid borders (border-white/10). Flat dark background. Soft inner glow on hover.",
+      "glassmorphism": "Used only for Sticky Header. bg-black/60 backdrop-blur-2xl border-b border-white/5",
+      "tracing_beam": "Used for Case Studies or Highlight cards. Glowing sky-blue subtle border effect on hover.",
+      "mesh_gradient": "Subtle, dark, grainy gradient in the background to avoid flat black.",
+      "particles": "TSParticles implementation in the Hero section to simulate neural networks. Extremely subtle, low opacity, silver/sky-blue lines."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-white text-black font-medium hover:bg-zinc-200 transition-colors px-6 py-3",
+      "secondary": "bg-transparent text-white border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors px-6 py-3",
+      "accent": "bg-sky-500 text-white font-medium hover:bg-sky-400 transition-colors px-6 py-3"
+    },
+    "skill_chips": {
+      "style": "bg-white/5 border border-white/10 px-3 py-1.5 text-sm font-mono text-zinc-300 rounded hover:border-sky-500/50 hover:bg-sky-500/10 transition-colors"
+    },
+    "timeline": {
+      "style": "Vertical line using border-l border-white/10. Nodes should be small squares or icons with bg-black border border-white/20. Content should have generous left padding."
+    },
+    "contact_form": {
+      "inputs": "bg-transparent border-b border-white/20 pb-2 focus:outline-none focus:border-sky-500 text-white w-full rounded-none px-0 text-lg transition-colors placeholder:text-zinc-600"
+    }
+  },
+  "interactions_and_animations": {
+    "scrolling": "Use 'lenis' for smooth scrolling to give momentum.",
+    "reveals": "Framer Motion for staggered fade-up on scroll (y: 20, opacity: 0 -> y: 0, opacity: 1, duration: 0.6).",
+    "hover_states": "Cards lift slightly (-translate-y-1) with border brightening. Buttons change background cleanly without jumping.",
+    "hero_animation": "Neural network particles drifting slowly. Text staggers in gracefully."
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "content": "Name, Title, Location, Tagline, CTAs. 'Open to roles' badge.",
+      "design_notes": "Full viewport height. Background is `hero_bg_particles` image or TSParticles + mesh gradient. Bold Cabinet Grotesk H1. Generous negative space."
+    },
+    {
+      "id": "about",
+      "content": "Concise bio + 4 highlight cards (9+ Yrs Exp, GenAI/Agentic, RAG/LLM/Speech, MLOps).",
+      "design_notes": "Bento grid layout for the 4 highlight cards. High contrast numbers."
+    },
+    {
+      "id": "featured_expertise",
+      "content": "8 cards showcasing specializations.",
+      "design_notes": "Grid layout. Use Lucide icons (CircuitBoard, Brain, Database, etc.) in a muted accent color. Minimalist borders."
+    },
+    {
+      "id": "current_role",
+      "content": "Highlight: Presight AI Senior AI Engineer.",
+      "design_notes": "Full-width feature banner. Deep slate background with sky-blue glowing edge (Tracing Beam effect)."
+    },
+    {
+      "id": "experience",
+      "content": "Vertical timeline of roles.",
+      "design_notes": "Use Lucide icons (Building, Briefcase) as logo placeholders for companies. Clean typography, muted dates."
+    },
+    {
+      "id": "case_studies",
+      "content": "5 project cards.",
+      "design_notes": "Asymmetrical layout or horizontal scroll. High focus on data/results."
+    },
+    {
+      "id": "technical_skills",
+      "content": "Grouped chips.",
+      "design_notes": "Categories as overlines (font-mono, uppercase). Chips flow in flex wrap."
+    },
+    {
+      "id": "education_and_certs",
+      "content": "Degrees and 7 cert cards.",
+      "design_notes": "Clean lists or compact grids."
+    },
+    {
+      "id": "contact",
+      "content": "Form, contact details, social links.",
+      "design_notes": "Massive footer area. Minimalist form (just lines, no heavy boxes). Large typography."
+    }
+  ],
+  "media": {
+    "hero_bg_particles": "https://static.prod-images.emergentagent.com/jobs/456385fa-b8a5-4b08-a5a3-856ed037ec6e/images/dbc822cbfe644a7665cbe125d08027ac96f54e70592ec3d59999caaca9cdb609.png",
+    "gradient_mesh_bg": "https://static.prod-images.emergentagent.com/jobs/456385fa-b8a5-4b08-a5a3-856ed037ec6e/images/04cd26fa8f536c3633f6c4d7c134178ecc592a46c0e538766f95c89e75b1f0b4.png",
+    "profile_photo_temp": "https://static.prod-images.emergentagent.com/jobs/456385fa-b8a5-4b08-a5a3-856ed037ec6e/images/8f08ebc2828c290004c05d40cc422d281f61f6adcb2edb40081eb73d88e8211b.png",
+    "resume_placeholder": "/resume.pdf",
+    "company_logos_strategy": "Use purely lucide-react icons like Building2, Network, BrainCircuit, Cpu, Database for company placeholders to maintain the minimalist dark aesthetic."
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme colors provided.",
+    "Implement the 'Open to roles' badge as a pulsing/glowing small pill in the hero section.",
+    "Use framer-motion for all staggered reveals and hover effects. Ensure `data-testid` is added to all interactive elements.",
+    "Use `react-tsparticles` for the neural network effect in the Hero, overlaid on the `gradient_mesh_bg` or solid #050505.",
+    "Use standard HTML inputs customized via Tailwind for the contact form, storing data into MongoDB.",
+    "Ensure `lucide-react` is used extensively for minimalist icons across expertise, timeline, and tech skills.",
+    "Apply `lenis` for smooth momentum scrolling.",
+    "Ensure all text meets at least 4.5:1 contrast ratio against the dark background."
+  ]
+}
