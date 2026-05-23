@@ -105,11 +105,11 @@ export const EXPERIENCE = [
         dates: "May 2025 – Apr 2026",
         icon: "Building2",
         highlights: [
-            "Led post-training, alignment, evaluation, and enterprise deployment of Granite-4.0-H-Small from Granite-4.0-H-Small-Base.",
-            "Re-architected a production LLM-based agent platform for large-file workloads, reducing memory usage by around 3x.",
-            "Built context-aware, multi-step agent workflows using graph-based orchestration and vector retrieval.",
-            "Developed actionable agents via MCP-based tool integration and external APIs such as GitHub.",
-            "Enabled registry and CRUD operations for agents, OpenAPI tools, and MCP servers in an Agentic AI Framework.",
+            "Led post-training, alignment, evaluation, and enterprise deployment of Granite-4.0-H-Small from Granite-4.0-H-Small-Base — using SFT, reinforcement-learning-based alignment (RLA), and model merging to improve instruction-following and production readiness.",
+            "Re-architected a production LLM agent platform for large-file workloads, reducing memory usage by ~3x and eliminating stability issues at enterprise load.",
+            "Converted blocking data operations into async execution pipelines, lifting concurrent agent throughput across the platform.",
+            "Designed context-aware, multi-step agent workflows using graph-based orchestration and vector retrieval; improved reasoning robustness with Chain-of-Thought and Tree-of-Thought prompting.",
+            "Built actionable agents via MCP-based tool integration and external APIs (e.g., GitHub), with dynamic per-user CRUD over agents, OpenAPI tools, and MCP servers inside the Agentic AI Framework (ARIA).",
         ],
         tech: [
             "Python",
@@ -135,10 +135,10 @@ export const EXPERIENCE = [
         dates: "May 2023 – May 2025",
         icon: "FlaskConical",
         highlights: [
-            "Shipped a cross-lingual RAG Q&A chatbot platform serving 5 languages.",
-            "Improved answer quality with fine-tuned BGE-M3 embeddings, Llama 3.1 8B, and reranking.",
-            "Built an MLOps pipeline using Jenkins, Kubeflow, MLflow, Canary deployment, and Grafana monitoring.",
-            "Optimized oneDNN operators for aarch64 CPUs, reducing inference time and cloud cost.",
+            "Shipped a cross-lingual RAG Q&A chatbot platform serving 5 languages — boosted answer F1 by ~32% vs baseline; Flask REST API delivers p95 latency <140 ms on ARM-based EC2.",
+            "Improved retrieval & answer quality by fine-tuning BGE-M3 embeddings and Llama 3.1 8B with an integrated reranker for cross-lingual relevance.",
+            "Built a hands-free MLOps pipeline (Jenkins → Kubeflow → MLflow) that auto-trains, quantizes, canary-deploys and monitors models — cutting release cycles from 10 days to 3 days.",
+            "Optimized oneDNN operators for aarch64 CPUs, trimming end-to-end inference time by 41% and lowering AWS compute cost by ~18%.",
         ],
         tech: [
             "Python",
@@ -165,9 +165,9 @@ export const EXPERIENCE = [
         dates: "May 2021 – May 2023",
         icon: "BrainCircuit",
         highlights: [
-            "Fine-tuned T5-Large for natural-language-to-SQL, reaching 91% query accuracy.",
-            "Automated table extraction from messy Excel reports using ML and OCR.",
-            "Built diabetic risk prediction model using patient medical and insurance data.",
+            "Fine-tuned T5-Large for natural-language → SQL (Capital Group), reaching 91% query accuracy on production logs and powering ~12K self-serve queries/month.",
+            "Automated table extraction from messy Excel reports for Swiss Re using ML + OCR — slashed manual prep time by 70% (8 hrs → 0.5 hrs per report) and boosted pipeline throughput 16x.",
+            "Built a one-year diabetic-risk prediction model from two years of patient medical and insurance data, enabling proactive monitoring and early intervention.",
         ],
         tech: [
             "Python",
@@ -189,8 +189,8 @@ export const EXPERIENCE = [
         dates: "Feb 2020 – May 2021",
         icon: "Cpu",
         highlights: [
-            "Integrated ZenDNN with PyTorch and ONNX Runtime.",
-            "Benchmarked ZenDNN vs ONNX Runtime and achieved inference speedup on AMD EPYC CPUs.",
+            "Integrated ZenDNN (AMD's deep learning library) with PyTorch and ONNX Runtime.",
+            "Benchmarked ZenDNN vs. ONNX Runtime — achieved a 25% inference speedup on AMD EPYC CPUs.",
         ],
         tech: ["Python", "PyTorch", "ONNX Runtime", "ZenDNN", "Docker", "pytest"],
     },
@@ -290,7 +290,7 @@ export const CASE_STUDIES = [
         number: "02",
         title: "Enterprise Agentic AI Platform — IBM",
         description:
-            "Production LLM agent platform with MCP tools, OpenAPI integrations, graph workflows, vector retrieval, registry management, and model alignment.",
+            "Production LLM agent platform with MCP tools, OpenAPI integrations, graph workflows, vector retrieval, and registry management. Re-architected for large-file workloads — ~3x memory reduction, async pipelines for higher concurrency, and CoT/ToT prompting for robust reasoning inside the ARIA framework.",
         tech: [
             "LangChain",
             "LangGraph",
@@ -308,7 +308,7 @@ export const CASE_STUDIES = [
         number: "03",
         title: "Cross-Lingual RAG Platform",
         description:
-            "Multilingual RAG chatbot serving 5 languages with fine-tuned embeddings, LLM adaptation, reranking, and low-latency REST APIs.",
+            "Multilingual RAG chatbot serving 5 languages with fine-tuned BGE-M3 embeddings, Llama 3.1 8B adaptation, and reranking. Lifted answer F1 by ~32% vs baseline; Flask REST API delivers p95 latency <140 ms on ARM-based EC2.",
         tech: [
             "BGE-M3",
             "Llama 3.1 8B",
@@ -324,7 +324,7 @@ export const CASE_STUDIES = [
         number: "04",
         title: "Hands-Free MLOps Pipeline",
         description:
-            "Automated train, quantize, deploy, canary release, and monitor pipeline that reduced release cycle from 10 days to 3 days.",
+            "Automated train → quantize → canary deploy → monitor pipeline that cut release cycles from 10 days to 3 days. Paired with oneDNN/aarch64 kernel tuning: −41% inference time and ~18% lower AWS compute cost.",
         tech: [
             "Jenkins",
             "Kubeflow",
