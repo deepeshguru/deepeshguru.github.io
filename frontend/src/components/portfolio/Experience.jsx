@@ -8,11 +8,12 @@ import {
     Network,
     Layers,
     Plane,
+    Radar,
     MapPin,
 } from "lucide-react";
 import { EXPERIENCE } from "../../data/portfolioData";
 
-const ICONS = { Building2, FlaskConical, BrainCircuit, Cpu, Network, Layers, Plane };
+const ICONS = { Building2, FlaskConical, BrainCircuit, Cpu, Network, Layers, Plane, Radar };
 
 const Experience = () => {
     return (
@@ -27,7 +28,7 @@ const Experience = () => {
                         04 — Experience
                     </div>
                     <h2 className="font-display mt-3 text-3xl sm:text-4xl md:text-5xl tracking-tighter text-white">
-                        Nine years. Seven teams. One throughline — shipping AI.
+                        Nine years. Eight teams. One throughline — shipping AI.
                     </h2>
                 </div>
 
@@ -64,8 +65,14 @@ const Experience = () => {
 
                                     <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
                                         <div>
-                                            <h3 className="font-display text-2xl text-white tracking-tight">
+                                            <h3 className="font-display text-2xl text-white tracking-tight inline-flex items-center gap-3">
                                                 {exp.company}
+                                                {exp.current && (
+                                                    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-sky-400/30 bg-sky-400/5 font-mono text-[9px] uppercase tracking-[0.18em] text-sky-200">
+                                                        <span className="h-1.5 w-1.5 rounded-full bg-sky-400 glow-dot" />
+                                                        Current
+                                                    </span>
+                                                )}
                                             </h3>
                                             <div className="mt-1 text-zinc-300 text-sm">
                                                 {exp.role}

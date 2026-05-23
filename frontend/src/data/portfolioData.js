@@ -99,6 +99,29 @@ export const CURRENT_ROLE = {
 
 export const EXPERIENCE = [
     {
+        company: "Presight AI",
+        role: "Senior AI Engineer",
+        location: "Abu Dhabi, UAE",
+        dates: "May 2026 – Present",
+        icon: "Radar",
+        current: true,
+        highlights: [
+            "Built audio analytics pipeline (speaker diarization + STT) for Presight Synergy using pyannote.audio, Whisper large-v3, and Microsoft VibeVoice.",
+            "Multimodal Qwen VLM workflows for video and signature detection on Ray Serve, Triton, and vLLM — exposed as MCP-ready agentic AI services. (See full detail in Current Role above.)",
+        ],
+        tech: [
+            "Python",
+            "PyTorch",
+            "pyannote.audio",
+            "Whisper",
+            "Qwen VLMs",
+            "Ray Serve",
+            "Triton",
+            "vLLM",
+            "MCP",
+        ],
+    },
+    {
         company: "IBM Labs",
         role: "AI Engineer Architect",
         location: "Bengaluru, India",
