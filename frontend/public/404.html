@@ -4,9 +4,8 @@
     <meta charset="utf-8" />
     <title>Deepesh Agrawal — Portfolio</title>
     <script>
-      // SPA fallback for GitHub Pages — redirect any deep route back to the hash-router root.
-      var base = "/portfolio/";
-      location.replace(base + "#" + location.pathname.replace(base, "/") + location.search);
+      // SPA fallback for GitHub Pages — redirect to hash-router root.
+      location.replace("/#" + location.pathname + location.search);
     </script>
   </head>
   <body></body>
