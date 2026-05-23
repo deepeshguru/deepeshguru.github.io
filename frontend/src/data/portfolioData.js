@@ -14,7 +14,7 @@ export const PROFILE = {
     openToRoles:
         "Open to Senior AI Engineer, AI Architect & GenAI Platform roles",
     photoUrl:
-        "https://static.prod-images.emergentagent.com/jobs/456385fa-b8a5-4b08-a5a3-856ed037ec6e/images/8f08ebc2828c290004c05d40cc422d281f61f6adcb2edb40081eb73d88e8211b.png",
+        "https://customer-assets.emergentagent.com/job_deepesh-ai-architect/artifacts/mx0avly8_WhatsApp%20Image%202023-02-01%20at%203.55.59%20PM_magicstudio_bnw1y7cbth7%20%281%29.png",
 };
 
 export const ABOUT_TEXT = `I am an AI architect and ML engineer with 9+ years of experience designing and deploying production-grade AI systems across NLP, Computer Vision, Generative AI, Agentic AI, RAG, MLOps, and scalable inference platforms. I have worked with Presight AI, IBM Labs, Fujitsu Research, UST, AMD, and other organizations, delivering enterprise AI platforms, multilingual RAG systems, LLM agents, model optimization, and real-time AI solutions.`;
