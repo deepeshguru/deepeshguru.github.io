@@ -1,39 +1,27 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { PROFILE } from "../../data/portfolioData";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
 const Contact = () => {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
-    const [status, setStatus] = useState("idle"); // idle | sending | sent
 
     const handle = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-    const submit = async (e) => {
+    const submit = (e) => {
         e.preventDefault();
         if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
             toast.error("Please fill in all fields.");
             return;
         }
-        setStatus("sending");
-        try {
-            await axios.post(`${API}/contact`, form);
-            setStatus("sent");
-            toast.success("Message sent. I'll get back to you shortly.");
-            setForm({ name: "", email: "", message: "" });
-            setTimeout(() => setStatus("idle"), 4000);
-        } catch (err) {
-            setStatus("idle");
-            const detail =
-                err?.response?.data?.detail ||
-                "Could not send your message. Please try again.";
-            toast.error(typeof detail === "string" ? detail : "Submit failed.");
-        }
+        const subject = `Portfolio enquiry from ${form.name}`;
+        const body = `Hi Deepesh,\n\n${form.message}\n\n—\n${form.name}\n${form.email}`;
+        const mailto = `mailto:${PROFILE.email}?subject=${encodeURIComponent(
+            subject,
+        )}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+        toast.success("Opening your email client…");
     };
 
     return (
@@ -53,7 +41,8 @@ const Contact = () => {
                     </h2>
                     <p className="mt-4 text-zinc-400 leading-relaxed">
                         Open to senior AI engineering, AI architect, and GenAI platform
-                        roles. Best reached via email or the form below.
+                        roles. Best reached via email or the form below — submitting opens
+                        your email client with the message pre-filled.
                     </p>
                 </div>
 
@@ -123,31 +112,14 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            disabled={status === "sending"}
                             data-testid="contact-submit-btn"
-                            className="group inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white text-black text-sm font-medium hover:bg-zinc-200 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                            className="group inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white text-black text-sm font-medium hover:bg-zinc-200 transition-colors"
                         >
-                            {status === "sending" && (
-                                <>
-                                    <Loader2 size={16} className="animate-spin" />
-                                    Sending…
-                                </>
-                            )}
-                            {status === "sent" && (
-                                <>
-                                    <CheckCircle2 size={16} />
-                                    Sent
-                                </>
-                            )}
-                            {status === "idle" && (
-                                <>
-                                    Send Message
-                                    <Send
-                                        size={14}
-                                        className="transition-transform group-hover:translate-x-0.5"
-                                    />
-                                </>
-                            )}
+                            Send Message
+                            <Send
+                                size={14}
+                                className="transition-transform group-hover:translate-x-0.5"
+                            />
                         </button>
                     </motion.form>
 

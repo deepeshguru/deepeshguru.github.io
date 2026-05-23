@@ -10,7 +10,7 @@ export const PROFILE = {
     phones: ["+971-585847820", "+91-8889223772"],
     github: "https://github.com/deepeshguru",
     linkedin: "https://www.linkedin.com/in/deepesh-agrawal-b3559015b/",
-    resumeUrl: "/resume.pdf",
+    resumeUrl: `${process.env.PUBLIC_URL || ""}/resume.pdf`,
     openToRoles:
         "Open to Senior AI Engineer, AI Architect & GenAI Platform roles",
     photoUrl:
